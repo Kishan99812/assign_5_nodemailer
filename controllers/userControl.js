@@ -35,8 +35,8 @@ let transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: "krrsantosh0@gmail.com",
-        pass: "igbulwujgpsydnrt"
+        user: "kishan9621@gmail.com",
+        pass: "etwiynrwxjxwdkra"
     }
 });
 
@@ -76,7 +76,7 @@ function saveUser(req, res) {
             UserSchema.create({ name: name, email: email, username: username, password: hash, image: image })
                 .then(data => {
                     let mailOptions = {
-                        from: 'krrsantosh0@gmail.com',
+                        from: 'kishan9621@gmail.com',
                         to: email,
                         subject: "Activation mail",
                         template: 'mail',
@@ -178,7 +178,7 @@ async function forget_post(req, res) {
         await UserSchema.findOne({ email: mail })
             .then(data => {
                 let mailOptions = {
-                    from: 'krrsantosh0@gmail.com',
+                    from: 'kishan9621@gmail.com',
                     to: mail,
                     subject: "Reset password",
                     template: 'reset',
@@ -212,7 +212,6 @@ function otp_post(req, res) {
         res.render('resetpass');
     } else {
         verifyotp = undefined;
-        console.log('kuch bhi random key')
         res.render('forgetpass');
     }
 }
